@@ -1,14 +1,11 @@
+from collections import Counter
 def solution(array):
-    dict = {}
-
-    for num in array:
-        if num not in dict:
-            dict[num] = 1
+    data = Counter(array).most_common(2)
+    print(data)
+    if len(array) == 1 or len(list(set(array))) == 1:
+        return array[0]
+    else:
+        if data[0][1] != data[1][1]:
+            return data[0][0]
         else:
-            dict[num] += 1
-    
-    result = sorted(dict.items(), key=lambda x: x[-1], reverse=True)
-    
-    if len(result) <= 1:
-        return result[0][0]
-    return result[0][0] if result[0][-1] != result[1][-1] else -1
+            return -1
