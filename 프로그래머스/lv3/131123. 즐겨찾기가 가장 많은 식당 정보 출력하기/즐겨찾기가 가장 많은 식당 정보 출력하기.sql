@@ -1,0 +1,8 @@
+-- 코드를 입력하세요
+SELECT FOOD_TYPE,REST_ID,REST_NAME, FAVORITES
+FROM REST_INFO
+WHERE FAVORITES IN (SELECT MAX(favorites) 
+                    FROM rest_info 
+                    GROUP BY food_type)
+GROUP BY FOOD_TYPE 
+ORDER BY FOOD_TYPE DESC;
