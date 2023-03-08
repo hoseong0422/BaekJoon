@@ -1,0 +1,10 @@
+A = int(input())
+B = str(input())
+B1 = int(B[0])
+B2 = int(B[1])
+B3 = int(B[2])
+
+print(A * B3)
+print(A * B2)
+print(A * B1)
+print((A * B3) + ((A * B2) * 10) + ((A * B1) * 100))
