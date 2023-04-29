@@ -1,0 +1,8 @@
+A, B = map(int, input().split())
+max_A = str(A).replace('5', '6')
+min_A = str(A).replace('6', '5')
+max_B = str(B).replace('5', '6')
+min_B = str(B).replace('6', '5')
+min_answer = int(min_A) + int(min_B)
+max_answer = int(max_A) + int(max_B)
+print(min_answer, max_answer, sep=' ')
