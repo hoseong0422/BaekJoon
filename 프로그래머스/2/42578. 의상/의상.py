@@ -1,8 +1,14 @@
 def solution(clothes):
-    cloth_dict = {k:[] for _,k in clothes}
-    for v, k in clothes:
-        cloth_dict[k].append(v)
-    res = 1
-    for v in cloth_dict.values():
-        res *= (len(v) + 1)
-    return res - 1
+    clothes_dict = {}
+
+    for c, t in clothes:
+        if t not in clothes_dict:
+            clothes_dict[t] = 2
+        else:
+            clothes_dict[t] += 1
+
+    cnt = 1
+    for num in clothes_dict.values():
+        cnt *= num
+
+    return cnt - 1
