@@ -14,4 +14,4 @@ for i in range(N):
             elif lst_data[j] != answer[j]:
                 answer[j] = '?'
 
-print(*answer, sep='')
+print(''.join(answer))
