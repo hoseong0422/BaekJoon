@@ -42,7 +42,6 @@ def peek():
         return None
     return stack[top]
 
-# SIZE도 변수로 받고 크랠스로 수택 구현 해보자!
 SIZE = 5
 stack = [None for _ in range(SIZE)]
 top = -1
