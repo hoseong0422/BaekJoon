@@ -1,9 +1,15 @@
 def isQueueFull():
     global SIZE, queue, front, rear
     if rear == SIZE - 1:
-        return True
+        if front == rear:
+            if queue[rear] == None:
+                queue = [None for _ in range(SIZE)]
+                rear = front = -1
+        else:
+            return True
     else:
         return False
+
 
 def isQueueEmpty():
     global SIZE, queue, front, rear
@@ -63,5 +69,3 @@ if __name__ == "__main__":
         select = input("삽입(I) / 추출(E) / 확인(V) / 종료(X) 중 하나를 선택 ==> ")
     
     print("프로그램 종료!!")    
-
-# 꽉 찬 queue에서 전부 추출되었을경우 초기화하는 내용 추가 필요    
