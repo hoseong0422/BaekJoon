@@ -5,8 +5,16 @@ def isQueueFull():
             if queue[rear] == None:
                 queue = [None for _ in range(SIZE)]
                 rear = front = -1
+                return False
+        # 실제 full이 아닌경우 queue를 제일 앞쪽으로 앞당겨서 뒤쪽에 자리 마련 (크기가 컨졌을떄는 안될거같음)
         else:
-            return True
+            if front != -1:
+                queue = queue[front+1:] + [None for _ in range(front + 1)]
+                rear -= front + 1
+                front = -1
+                return False
+            else:
+                return True
     else:
         return False
 
